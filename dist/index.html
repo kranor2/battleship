@@ -3,11 +3,104 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document | kranor2</title>
+    <title>Battleship | kranor2</title>
     <link rel="stylesheet" href="./style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anton+SC&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <script src="./index.js"></script>
 <script defer src="main.js"></script></head>
 <body>
-    
+    <header>
+        <div class="title">Battleship</div>
+    </header>   
+    <div class ="pregame">
+        <form>
+            <div id="1" class="pregametxt">
+                Choose your First Ship (Length = 5) root coordinates and direction!
+            </div>
+            <label for="column">Root: </label>
+            <select name="column" id="column">
+                <option value="0">A</option>
+                <option value="1">B</option>
+                <option value="2">C</option>
+                <option value="3">D</option>
+                <option value="4">E</option>
+                <option value="5">F</option>
+                <option value="6">G</option>
+                <option value="7">H</option>
+                <option value="8">I</option>
+                <option value="9">J</option>
+                <option value="10">K</option>
+                <option value="11">L</option>
+            </select>
+            <select name="row" id="row">
+                <option value="0">1</option>
+                <option value="1">2</option>
+                <option value="2">3</option>
+                <option value="3">4</option>
+                <option value="4">5</option>
+                <option value="5">6</option>
+                <option value="6">7</option>
+                <option value="7">8</option>
+                <option value="8">9</option>
+                <option value="9">10</option>
+                <option value="10">11</option>
+                <option value="11">12</option>
+            </select>
+            <label for="direction">Direction: </label>
+            <select name="direction" id="direction">
+                <option value="horizontal">Horizontal</option>
+                <option value="vertical">Vertical</option>
+            </select>
+            <button type="button" id="formbtn">Submit</button>
+        </form>
+        <button id="random">Place ships randomly</button>
+    </div>
+    <div class="result"></div>
+    <div class="boards">
+        <section class="player">
+            <div class="boardheader">Your Board</div>
+            <div class="board">
+                <div class="letters">
+                    <div></div>
+                    <div class="letter">A</div>
+                    <div class="letter">B</div>
+                    <div class="letter">C</div>
+                    <div class="letter">D</div>
+                    <div class="letter">E</div>
+                    <div class="letter">F</div>
+                    <div class="letter">G</div>
+                    <div class="letter">H</div>
+                    <div class="letter">I</div>
+                    <div class="letter">J</div>
+                    <div class="letter">K</div>
+                    <div class="letter">L</div>
+                </div>
+                <div class="cells"></div>
+            </div>
+        </section>
+        <section class="computer">
+            <div class="compheader">Computer's Board</div>
+            <div class="compboard">
+                <div class="letters">
+                    <div></div>
+                    <div class="letter">A</div>
+                    <div class="letter">B</div>
+                    <div class="letter">C</div>
+                    <div class="letter">D</div>
+                    <div class="letter">E</div>
+                    <div class="letter">F</div>
+                    <div class="letter">G</div>
+                    <div class="letter">H</div>
+                    <div class="letter">I</div>
+                    <div class="letter">J</div>
+                    <div class="letter">K</div>
+                    <div class="letter">L</div>
+                </div>
+                <div class="compboard-cells"></div>
+            </div>
+        </section>
+    </div>
 </body>
 </html>

@@ -4,7 +4,7 @@ export function boardDOM() {
         if (endgame) {
             domBoard = document.querySelector('.compboard-cells');
         } else {
-            domBoard = docuemnt.querySelector('.cells');
+            domBoard = document.querySelector('.cells');
         }
         domBoard.textContent = "";
         let rows = 0;

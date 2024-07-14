@@ -1,0 +1,247 @@
+:root {
+    font-size: 60%;
+    --cellSize: 5rem;
+    --shipborder: 2px solid #330802;
+}
+
+body {
+    padding: 1rem;
+    display: grid;
+    background-color: #597782;
+    color: #f7f8f8;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 400;
+}
+
+header {
+    justify-self: center;
+    font-size: 5rem;
+    margin: 1rem;
+    font-family: 'Anton SC', sans-serif;
+}
+
+.pregame {
+    display: grid;
+    justify-self: center;
+    font-size: 1.5rem;
+}
+
+form {
+    border: 3px solid #330802;
+    background-color: #beb1a1;
+    color: #1a0c09;
+    border-radius: 5px;
+    padding: 1.5rem 5rem;
+    margin: 1.5rem;
+    justify-self: center;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem 2rem;
+    align-items: center;
+    min-width: 45vw;
+}
+
+.pregametxt {
+    margin: 1.5rem;
+}
+
+select {
+    padding: 0.5rem;
+    border: 1px #f7f8f8;
+    outline: 1px solid #d93e39;
+
+}
+
+#direction {
+    grid-column: 2 / 4;
+}
+
+.pregametxt, #formbtn {
+    grid-column: 1 / 4;
+}
+
+#formbtn, #random {
+    position: relative;
+    padding: 1.5rem;
+    outline: none;
+    background-color: #086ba0;
+    color: #f7f8f8;
+    border: none;
+    border-radius: 7.5px;
+    justify-self: center;
+}
+
+#formbtn:active, #random:active {
+    top: 2px;
+}
+
+#random {
+    margin: 1rem;
+}
+
+.result {
+    justify-self: center;
+    font-size: 2.5rem;
+    padding: 1rem;
+}
+
+.boards {
+    justify-self: center;
+    padding: 2rem;
+    display: flex;
+    text-align: center;
+}
+
+section {
+    position: absolute;
+    left: 30vw;
+    transition: all 0.5s;
+}
+
+.boardheader, .compheader {
+    font-size: 1.5rem;
+}
+
+.board, .compboard {
+    padding: 1rem;
+    display: grid;
+}
+
+.letters {
+    font-size: 1.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.letter {
+    place-content: center end;
+}
+
+.number {
+    display: grid;
+    font-size: 1.5rem;
+    height: var(--cellSize);
+    align-content: center;
+}
+
+.letters, .row, .comprow {
+    display: grid;
+    grid-template-columns: repeat(13, 1fr);
+}
+
+.cell, .compcell {
+    height: var(--cellSize);
+    width: var(--cellSize);
+    background-color: #beb1a1;
+    border: 0.5px solid #1a0c09;
+    padding: 0;
+    box-shadow: 0px 0px 1px black;
+    font-family: 'Chakra Petch', sans-serif;
+    font-weight: 300;
+    font-size: calc(var(--cellSize) - 1rem);
+}
+
+.shipcell {
+    background-color: #939e9a;
+    border: none;
+}
+
+.horizontal {
+    border-top: var(--shipborder);
+    border-bottom: var(--shipborder);
+}
+
+.vertical {
+    border-left: var(--shipborder);
+    border-right: var(--shipborder);
+}
+
+.horizontalroot {
+    border-left: var(--shipborder);
+}
+
+.verticalroot {
+    border-top: var(--shipborder);
+}
+
+.horizontaltail {
+    border-bottom: var(--shipborder);
+}
+
+.verticaltail {
+    border-bottom: var(--shipborder);
+}
+
+.missedcell::after {
+    position: relative;
+    top: 10%;
+    background-color: black;
+}
+
+.player.endgame {
+    left: 7vw;
+}
+
+.computer.endgame {
+    left: 50vw;
+}
+
+.hitcell::after {
+    position: relative;
+    top: 10%;
+    content: "X";
+    color: #d93e39;
+}
+
+button:hover {
+    cursor: pointer;
+}
+
+.hidden {
+    visibility: hidden;
+    max-height: 0;
+    opacity: 0;
+}
+
+@media (max-width: 1200px) {
+    section {
+        left: 25vw;
+    }
+
+    .player.endgame {
+        left: 3vw;
+    }
+}
+
+@media (max-width: 1100px) {
+    body {
+        --cellSize: 4.5rem;
+    }
+
+    section {
+        left: 20vw;
+    }
+
+    .computer.endgame {
+        left: 20vw;
+        top: max(60vh, 70vw);
+    }
+}
+
+@media (max-width: 800px) {
+    body {
+        --cellSize: 2.5rem;
+    }
+
+    section {
+        left: 15vw;
+    }
+
+    .player.endgame {
+        left: 15vw;
+    }
+
+    .computer.endgame {
+        left: 15vw;
+        top: max(75vh, 90vw);
+    }
+}
