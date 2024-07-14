@@ -79,7 +79,8 @@ export function Game() {
     const startGame = () => {
         const pregame = document.querySelector('.pregame');
         pregame.classList.add('hidden');
-        helpContent.textContent = "Click on a cell in your opponent's grid to attack it. If an X appears, you've made a hit! You'll get to take another turn automatically. If the cell fills in, you did not make a hit; the computer will now take its turn.";
+        const playerBoardHeader = document.querySelector('.boardheader');
+        playerBoardHeader.textContent += "Click on a cell in your opponent's grid to attack it. If an X appears, you've made a hit! You'll get to take another turn automatically. If the cell fills in, you did not make a hit; the computer will now take its turn.";
         display.hideBoard(playerSection, computerSection);
         waitMove();
     };

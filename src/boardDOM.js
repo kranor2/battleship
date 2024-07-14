@@ -9,7 +9,7 @@ export function boardDOM() {
         domBoard.textContent = "";
         let rows = 0;
         board.forEach((row) => {
-            let squares = 0;
+            let cells = 0;
             const domRow = document.createElement('div');
             domRow.classList.add('row');
             const rowNumber = document.createElement('div');
@@ -30,7 +30,7 @@ export function boardDOM() {
     };
 
     const computerBoard = (board, fleet) => {
-        const domBoard = document.querySelector('compboard-cells');
+        const domBoard = document.querySelector('.compboard-cells');
         domBoard.textContent = "";
         let rows = 0;
         board.forEach((row) => {
@@ -53,7 +53,7 @@ export function boardDOM() {
         });
     };
 
-    const displayCell = (element, square, boardType, fleet) => {
+    const displayCell = (element, cell, boardType, fleet) => {
         if (cell.status === null && cell.ship === null) {
             return;
         } else if (cell.status === 'miss') {
